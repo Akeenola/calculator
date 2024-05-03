@@ -8,7 +8,9 @@ let result = "";
 let op = "";
 let concatenate = "";
 let operate= false;
-let status = 0
+let status = 0;
+let activePoint = false;
+
 function showZero(){
     var board = document.getElementById("display");
     
@@ -121,12 +123,19 @@ function showSix(){
     
     var board = document.getElementById("display");
     
-    concatenate=concatenate+"6";
-    board.value=concatenate;
-    if(operate==false)
+    
+    if(operate==false){
+        concatenate=concatenate+"6";
+        board.value=concatenate;
         holder1 = Number(board.value)
-    else
+    }
+        
+    else{
+        concatenate=concatenate+"6";
+        board.value=concatenate;
         holder2 = Number(board.value)
+    }
+        
    // operate(op,Number(board.value));
    // alert("Answer is "+holder);
 }
@@ -134,12 +143,19 @@ function showSeven(){
     
     var board = document.getElementById("display");
     
-    concatenate=concatenate+"7";
-    board.value=concatenate;
-    if(operate==false)
+    
+    if(operate==false){
+        concatenate=concatenate+"7";
+        board.value=concatenate;
         holder1 = Number(board.value)
-    else
+    }
+        
+    else{
+        concatenate=concatenate+"7";
+        board.value=concatenate;
         holder2 = Number(board.value)
+    }
+        
    // operate(op,Number(board.value));
    // alert("Answer is "+holder);
 }
@@ -147,12 +163,19 @@ function showEigth(){
     
     var board = document.getElementById("display");
     
-    concatenate=concatenate+"8";
-    board.value=concatenate;
-    if(operate==false)
+    
+    if(operate==false){
+        concatenate=concatenate+"8";
+        board.value=concatenate;
         holder1 = Number(board.value)
-    else
+    }
+        
+    else{
+        concatenate=concatenate+"8";
+        board.value=concatenate;
         holder2 = Number(board.value)
+    }
+        
    // operate(op,Number(board.value));
    // alert("Answer is "+holder);
 }
@@ -160,12 +183,40 @@ function showNine(){
     
     var board = document.getElementById("display");
     
-    concatenate=concatenate+"9";
-    board.value=concatenate;
-    if(operate==false)
+    
+    if(operate==false){
+        concatenate=concatenate+"9";
+        board.value=concatenate;
         holder1 = Number(board.value)
-    else
+    }
+        
+    else{
+        concatenate=concatenate+"9";
+        board.value=concatenate;
         holder2 = Number(board.value)
+    }
+        
+   // operate(op,Number(board.value));
+   // alert("Answer is "+holder);
+}
+function showPoint(){
+    
+    var board = document.getElementById("display");
+    
+    
+    if(activePoint==false){
+        concatenate=concatenate+".";
+        board.value=concatenate;
+        holder1 = Number(board.value)
+        activePoint = true;
+    }
+        
+    /*else{
+        concatenate=concatenate+"9";
+        board.value=concatenate;
+        holder2 = Number(board.value)
+    }*/
+        
    // operate(op,Number(board.value));
    // alert("Answer is "+holder);
 }
@@ -187,6 +238,7 @@ function add(){
     op="add";   
     operate= true; 
     concatenate="";
+    activePoint = false;
     //operate(op,Number(board.value));
     //board.value= holder;
     
@@ -199,6 +251,7 @@ function minus(){
     op="minus"; 
     operate= true; 
     concatenate="" ;
+    activePoint= false;
    // operate(op,Number(board.value));
    // board.value= holder; 
     
@@ -210,6 +263,8 @@ function times(){
    // board.value= result;
     op="times";  
     operate= true; 
+    concatenate="";
+    activePoint = false;
     //operate(op,Number(board.value));
     //board.value= holder; 
     
@@ -222,6 +277,7 @@ function divide(){
     op="divide";   
     operate= true;
     concatenate="";
+    activePoint=false;
     //operate(op,Number(board.value));
     //board.value= holder; 
     
@@ -236,6 +292,7 @@ function equals(){
     board.value= holder1;
     operate= false;
     concatenate="";
+    activePoint=false;
 
 
 
