@@ -1,13 +1,13 @@
 body{margin: 5%;align-content: center;}
 .number{color: blue;font-weight: 40px;}
-.container{width: 40%;background-color: rgb(40, 40, 41);border-radius: 15%;margin: 5%;}
+.container{width: 40%;background-color: rgb(156, 156, 160);border-radius: 15%;margin: 5%;border:5px solid red}
 table{color:white;align-items: center;width: 100%;padding: 5% 10%;}
-button{background-color: bisque;padding: 5px 10px;width: 100%;margin: 0;}
+button{background-color: bisque;padding: 5px 10px;width: 100%;margin: 0;border-radius: 25%;color:black;font-size: 50px;}
     button h1{font-size: 20px;
         font-weight: 5px;}
 button.equals{background-color: yellow;}
 table tr td input{line-height: 3em;
-    text-align: right;font-size: large;margin: 5px 5px;width: 100%;}
-button:hover{background-color: aquamarine;border-radius: 25%;}
+    text-align: right;font-size: large;margin: 5px 5px;width: 100%;font-size: 40px;font-weight: bolder;font-family:'sherif','orbitron', 'bank gothic','futura','arial';}
+button:hover{background-color: aquamarine;}
 tr td h1{color: red;font-size: 30px;}
 em{color: white;}
