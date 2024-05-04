@@ -9,8 +9,8 @@
 </head>
 <body>
    <div class="container">
-    <table><tr><td colspan="4"><h1>Akeenola <em>Calculator</em> </h1></td></tr>
-    <tr><td colspan="4"><input id="display" type="text" placeholder="0" readonly></td></tr>
+    <table>
+    <tr><td colspan="4"><input id="display" type="text" onkeypress="if(this.value.length==4) return false;" pattern="/^-?\d+\.?\d*$/" maxlength="15" placeholder="0" readonly/></td></tr>
 <tr><td><button id="seven" onclick="showSeven()"><h1>7</h1></button></td>
     <td><button id="eight" onclick="showEigth()"><h1>8</h1></button></td>
     <td><button id="nine" onclick="showNine()"><h1>9</h1></button></td>

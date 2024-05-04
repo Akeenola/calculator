@@ -1,17 +1,15 @@
-const b1 = document.getElementById("four");
-
-
 let holder1 = 0;
 let holder2 = 0;
-let holder = 0;
 let result = "";
 let op = "";
 let concatenate = "";
 let operate= false;
 let status = 0;
 let activePoint = false;
+let signed = false;
 
 function showZero(){
+    signed = true;
     var board = document.getElementById("display");
     
     if(operate==false){
@@ -30,6 +28,7 @@ function showZero(){
        
 }
 function showOne(){
+    signed = true;
     var board = document.getElementById("display");
     
     if(operate==false){
@@ -48,6 +47,7 @@ function showOne(){
        
 }
 function showTwo(){
+    signed = true;
     var board = document.getElementById("display");
     
     if(operate==false){
@@ -66,6 +66,7 @@ function showTwo(){
        
 }
 function showThree(){
+    signed = true;
     var board = document.getElementById("display");
     
     if(operate==false){
@@ -84,6 +85,7 @@ function showThree(){
 }
 
 function showFour(){
+    signed = true;
     var board = document.getElementById("display");
     
     if(operate==false){
@@ -102,7 +104,7 @@ function showFour(){
    // operate(op,Number(board.value));
 }
 function showFive(){
-    
+    signed = true;
     var board = document.getElementById("display");
     
     
@@ -120,7 +122,7 @@ function showFive(){
    // alert("Answer is "+holder);
 }
 function showSix(){
-    
+    signed = true;
     var board = document.getElementById("display");
     
     
@@ -140,7 +142,7 @@ function showSix(){
    // alert("Answer is "+holder);
 }
 function showSeven(){
-    
+    signed = true;
     var board = document.getElementById("display");
     
     
@@ -160,7 +162,7 @@ function showSeven(){
    // alert("Answer is "+holder);
 }
 function showEigth(){
-    
+    signed = true;
     var board = document.getElementById("display");
     
     
@@ -180,7 +182,7 @@ function showEigth(){
    // alert("Answer is "+holder);
 }
 function showNine(){
-    
+    signed = true;
     var board = document.getElementById("display");
     
     
@@ -205,10 +207,20 @@ function showPoint(){
     
     
     if(activePoint==false){
-        concatenate=concatenate+".";
-        board.value=concatenate;
-        holder1 = Number(board.value)
-        activePoint = true;
+        if(concatenate==""){
+            concatenate="0."+concatenate;
+            board.value= concatenate;
+            activePoint = true;
+
+        }
+            
+        else {
+            concatenate=concatenate+".";
+             board.value=concatenate;
+            holder1 = Number(board.value)
+            activePoint = true;
+        }
+        
     }
         
     /*else{
@@ -228,7 +240,10 @@ function operation(op,val1,val2){
     else if(op=="times")
         holder1 = val1*val2
     else if(op=="divide")
-        holder1 = val1/val2
+        if(val2 ==0)
+            holder1 = "Math Error";
+        else
+            holder1 = val1/val2
 }
 function add(){
     var board = document.getElementById("display");
@@ -248,10 +263,23 @@ function minus(){
    // result = board.value + " - "
     //alert("Mee" + result);
    // board.value= result;
-    op="minus"; 
-    operate= true; 
-    concatenate="" ;
-    activePoint= false;
+   if(signed==false){//allow signed value operation
+         concatenate="-"+concatenate;
+         board.value = concatenate
+         signed = true;
+   }
+        
+    else{
+        if(board.value =="-")
+            board.value = "Invalid Operation";
+        else{
+            op="minus"; 
+            operate= true; 
+            concatenate="" ;
+            activePoint= false;
+        }
+    }
+    
    // operate(op,Number(board.value));
    // board.value= holder; 
     
